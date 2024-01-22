@@ -27,30 +27,34 @@ const Sidebar = () => {
     <>
         <AnimatePresence>
         {display && 
-            <motion.div 
-            className="SidebarMenu"
+            <motion.div
             initial={{x: 0}}
             animate={{x: 400}}
             exit={{x:0}}
-            transition= {{ duration: 1, ease: "easeInOut" }}
-            ref={sbDivRef}
-            >
-                <div className={"SidebarHeader"}>
-                    <h1>MENU</h1>
-                    <img src={xIcon}  onClick={handleSidebar}/>
+            transition= {{ duration: 1, ease: "easeInOut" }}>
+                <div 
+                className="SidebarMenu"
+                ref={sbDivRef}
+                >
+                    <div className={"SidebarHeader"}>
+                        <h1>MENU</h1>
+                        <img src={xIcon}  onClick={handleSidebar}/>
+                    </div>
+                    <SidebarContent/>
                 </div>
-                <SidebarContent/>
             </motion.div>}
         </AnimatePresence>
         <div className="SidebarBtnContainer" onClick={handleSidebar} ref={IconDivRef}>
-            <motion.img 
-            src={hamburgerIcon}
-            width={40}
+            <motion.div
             initial={{opacity: 0}}
             animate={{opacity: 2}}
-            transition= {{ duration: 2, ease: "easeIn" }}
-            alt="Hamburger Icon"
-            />
+            transition= {{ duration: 2, ease: "easeIn" }}>
+                <img 
+                src={hamburgerIcon}
+                width={40}
+                alt="Hamburger Icon"
+                />
+            </motion.div>
         </div>
 
     </> 

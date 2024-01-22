@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
-import axios from "axios"
+import { useContext, useEffect, useState } from 'react'
 import {getList, toBeConfirmed, createSpeech, findSpeech, updateSpeech} from "./SideBarFunctions.tsx"
 import {MainContext} from "../../../context/MainContext"
 import "./SidebarContent.css"

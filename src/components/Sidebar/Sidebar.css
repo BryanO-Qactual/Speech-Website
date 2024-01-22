@@ -4,13 +4,18 @@
     width: 400px;
     position: absolute;
     background-color: rgb(221, 221, 221);
-    z-index: 2;
+    z-index: 3;
     margin-left: -400px;
     & > .SidebarHeader{
         display: flex;
         align-items: center;
         justify-content:space-between
     }
+}
+/* NOTE - Just to get framer motion to work */
+div:has(.SidebarMenu){
+    z-index: 3;
+    position: absolute;
 }
 /* SECTION - Sidebar button container */
 .SidebarBtnContainer{

@@ -1,5 +1,4 @@
 import axios from "axios"
-import { useContext } from "preact/hooks";
 const proxy = import.meta.env.VITE_API_BASE_URL as string
 // import {MainContext} from "../../../context/MainContext"
 
