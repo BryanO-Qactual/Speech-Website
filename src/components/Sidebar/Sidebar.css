@@ -1,0 +1,62 @@
+/* SECTION - Sidebar container and header container */
+.SidebarMenu{
+    height: 100vh;
+    width: 400px;
+    position: absolute;
+    background-color: rgb(221, 221, 221);
+    z-index: 2;
+    margin-left: -400px;
+    & > .SidebarHeader{
+        display: flex;
+        align-items: center;
+        justify-content:space-between
+    }
+}
+/* SECTION - Sidebar button container */
+.SidebarBtnContainer{
+    position: absolute;
+    margin: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+/* SECTION - Sidebar content */
+.SidebarHeader{
+    & > h1{
+        margin-left: 10px;
+    }
+    & > img{
+        height: 40px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border-radius: 10px;
+        padding: 5px;
+        &:hover{
+            background-color: rgb(211, 211, 211);
+        }
+        &:active{
+            background-color: rgb(164, 163, 163);;
+        }
+    }
+}
+.SidebarBtnContainer{
+    & > img{
+        padding: 10px;
+        transition: all 0.2s ease;
+        border-radius: 10px;
+        &:hover{
+            background-color: rgb(211, 211, 211);
+        }
+        &:active{
+            background-color: rgb(164, 163, 163);;
+        }
+    }
+}
+@media print{
+    .SidebarBtnContainer{
+        display: none;
+    }
+    .SidebarMenu{
+        display: none;
+    }
+}

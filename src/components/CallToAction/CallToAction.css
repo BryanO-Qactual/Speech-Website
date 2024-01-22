@@ -1,0 +1,58 @@
+/* SECTION - Page, content, prompt container */
+.CallToActionContainer{
+    margin: var(--form_margins);
+    display: grid;
+    grid-template-columns: var(--form_window_gridColumns);
+    grid-template-rows: var(--form_gridRows);
+    gap: var(--form_gridGap);
+}
+/* SECTION -  Page title and icon*/
+.CallToActionContainer{
+    & > div:nth-child(1){
+        grid-column: span 2;
+        display: flex;
+        height: fit-content;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 30px;
+        & > a{
+            padding: 7px;
+            border-radius: 10px;
+            transition: var(--CopyNdDownload_transition);
+            &:hover{
+                background-color: rgb(197, 194, 194);
+                
+            }
+        }
+        & i{
+            font-size: 40px;
+        }
+    }
+}
+/* SECTION -  Page title*/
+.CallToActionTitle{
+    font-size: var(--page_title);
+    margin: 0;
+    margin-right: auto;
+}
+/* SECTION - Phone screen adaptability */
+@media screen and (max-width: 700px) {
+    .CallToActionContainer{
+        & > .CallToActionContent{
+            grid-template-columns: var(--form_phone_gridColumns);
+        }
+    }
+}
+/* SECTION - Takes it out when printing */
+@media print{
+    .CallToActionContainer{
+        & > div:nth-child(1){
+            & > a{
+                display: none;
+            }
+            & > i{
+                display: none;
+            }
+        }
+    }
+}

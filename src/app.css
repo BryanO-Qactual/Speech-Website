@@ -1,0 +1,37 @@
+body, html{
+ margin: 0;
+ padding: 0;
+ border: 0;
+}
+h1, h2, h3, p{
+    font-family: 'Cooper Hewitt', sans-serif;
+}
+p, h3{
+    text-align: center;
+}
+textarea{
+    min-height: 100%;
+    resize: none;
+    &::-webkit-scrollbar{
+        width: 0;
+    }
+}
+/* SECTION - Creates a new page when printing */
+.newpage{
+    page-break-before: always;
+}
+/* Content css */
+.PromptContainer{
+    border: var(--prompt_border);
+    background-color: var(--prompt_backgroundColor);
+    & > h3{
+        font-size: var(--prompt_title)
+    }
+    & > p{
+        font-size: var(--prompt_paragraph);
+    }
+    & > *{
+        margin-right: var(--form_text_leftNdRightMargins);
+        margin-left: var(--form_text_leftNdRightMargins);
+    }
+}

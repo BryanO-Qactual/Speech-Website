@@ -1,0 +1,18 @@
+:root{
+    --page_title: 50px;
+    --prompt_title: 20px;
+    --prompt_paragraph: 15px;
+    --prompt_backgroundColor: #D9D9D9;
+    --prompt_border: black solid 2px;
+
+    --form_margins: clamp(0px, 2.5vw, 300px);
+    --form_text_leftNdRightMargins: 10px;
+    --form_gridGap: 20px;
+    --form_window_gridColumns: min(50%, 300px) 1fr;
+    --form_gridRows: auto;
+
+    --form_phone_gridColumns: 1fr;
+
+    --CopyNdDownload_transition: all 0.2s ease
+
+}
