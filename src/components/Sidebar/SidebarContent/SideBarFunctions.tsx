@@ -7,7 +7,7 @@ const proxy = import.meta.env.VITE_API_BASE_URL as string
 
 
 export async function getList(){
-    const info = axios.get(proxy + "/getSpeechList")
+    const info = axios.get("https://2eszsrtrxhy66yrndnzrocn2rq0xeema.lambda-url.us-east-1.on.aws/")
         .then((list: any) => {
             return list.data
         })
@@ -27,9 +27,11 @@ export async function createSpeech(name:string,  contentObj:any){
     let formattedName = await name.replace(/ /g, '_');
     formattedName = formattedName.replace(/^_+|_+$/g, '');
     try {
-        const result = await axios.post(proxy + `/createSpeech/${formattedName}`, {
+        const result = await axios.post(`https://xuefpu6mhvnaibt2ec3i4yznea0nkoei.lambda-url.us-east-1.on.aws/?fileName=${formattedName}`, {
             content: contentObj
         }); 
+        console.log(result);
+        
         return result.data.success
     } catch (error) {
         console.error('Error making POST request:', error);
@@ -51,10 +53,10 @@ export function toBeConfirmed(message:string, e:any){
     }
 }
 export async function findSpeech(fileName:string) {
-    // const formattedFileName = title.replace(/ /g, '_');
     try{
-        const result = await axios.get(proxy+`/speech/getSpeech/${fileName}`)
-        return result.data
+        const result = await axios.get(`https://sbd2nitusi2nukkud5mxclxi6a0bwvhy.lambda-url.us-east-1.on.aws/?fileName=${fileName}`)
+        const data = JSON.parse(result.data)
+        return data
     }catch(err){
 
     }
@@ -68,7 +70,7 @@ export async function updateSpeech(fileName:string, content:object){
 
 function deleteSpeech(fileName:string){
     try{
-        axios.delete(proxy + `/deleteSpeech/${fileName}`)
+        axios.delete(`https://dgobxsp34lv2ysfdw6lrfb6bci0atvza.lambda-url.us-east-1.on.aws/?fileName=${fileName}`)
     }catch(err){
         console.log(err)
     }
