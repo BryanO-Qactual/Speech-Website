@@ -1,10 +1,4 @@
 import axios from "axios"
-const proxy = import.meta.env.VITE_API_BASE_URL as string
-// import {MainContext} from "../../../context/MainContext"
-
-// const {openHeart: [val, setVal]} = useContext(MainContext)  || {}
-
-
 
 export async function getList(){
     const info = axios.get("https://2eszsrtrxhy66yrndnzrocn2rq0xeema.lambda-url.us-east-1.on.aws/")

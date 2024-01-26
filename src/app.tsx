@@ -9,10 +9,12 @@ import HeadContent3 from './components/HeadContent3/HeadContent3'
 import CallToAction from './components/CallToAction/CallToAction.tsx'
 import ClosingHeart from './components/ClosingHeart/ClosingHeart.tsx'
 import Sidebar from './components/Sidebar/Sidebar.tsx'
+import PasswordPage from './components/PasswordPage/PasswordPage.tsx'
 
 export function App() {
   return (
     <>
+      <PasswordPage/>
       <Sidebar/>
       <Intro/>
       <OpenHeart/>
